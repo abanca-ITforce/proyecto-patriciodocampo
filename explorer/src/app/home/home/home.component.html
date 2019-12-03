@@ -1,2 +1,8 @@
-paises:<br>
-<content id="list-contries"><mat-card class="list_element" *ngFor="let element of list"><a routerLink="/country/{{ element.id }}">{{ element.name}}</a></mat-card></content>
+<app-countries-list
+  *ngIf="countries$ | async as countries; else empty"
+  [countries]="countries"
+></app-countries-list>
+
+<ng-template #empty>
+  Loading...
+</ng-template>
