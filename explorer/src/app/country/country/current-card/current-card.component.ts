@@ -25,5 +25,11 @@ export class CurrentCardComponent implements OnInit {
     this.country.longitude = parseFloat(this.country.longitude);
   }
 
+  pickLocation(event) {
+    this.country.latitude = event.coords.lat;
+    this.country.longitude = event.coords.lng;
+    console.log(event);
+  }
+
 
 }

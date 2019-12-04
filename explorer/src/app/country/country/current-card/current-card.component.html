@@ -1,6 +1,6 @@
 <mat-card >
   <mat-card-header class="mapContainer">
-    <div mat-card-avatar class="mapView"><agm-map [latitude]="country.latitude" [longitude]="country.longitude" class="mapSize"></agm-map></div>
+    <div mat-card-avatar class="mapView"><agm-map [latitude]="country.latitude" [longitude]="country.longitude" (mapClick)="pickLocation($event)" class="mapSize"><agm-marker [latitude]="country.latitude" [longitude]="country.longitude"></agm-marker></agm-map></div>
     <mat-card-title class="countryLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{country.name}}</mat-card-title>
     <mat-card-subtitle><strong>Capital: </strong> {{country.capitalCity}}</mat-card-subtitle>
     <mat-card-subtitle><strong>Region: </strong> {{country.region.value}}</mat-card-subtitle>
