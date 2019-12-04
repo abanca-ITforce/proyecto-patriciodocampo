@@ -22,6 +22,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyB0QS1J_g6nqvt7vzARlPnvJCX69mF_bhs'
     }),
     CountryRoutingModule
-  ]
+  ],
+  exports: []
 })
 export class CountryModule { }

@@ -19,4 +19,10 @@ export class CountryListService {
     return this.httpClient.get<any>(filterURL).pipe(map(result => result[1][0]));
   }
 
+  getPopulationGDP$(id) {
+    // tslint:disable-next-line: max-line-length
+    const filterURL = `https://api.worldbank.org/v2/countries/${ id }/indicators/SP.POP.TOTL;NY.GDP.MKTP.CD/?source=2&date=2018&per_page=1000&format=json`;
+    return this.httpClient.get<any>(filterURL).pipe(map(result => result[1][0]));
+  }
+
 }
