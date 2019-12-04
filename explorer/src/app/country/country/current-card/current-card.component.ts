@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 // tslint:disable-next-line: use-pipe-transform-interface
 @Component({
@@ -11,16 +10,17 @@ import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 export class CurrentCardComponent implements OnInit {
   @Input() id: string;
-  url: SafeResourceUrl;
-  constructor(private sanitizer: DomSanitizer) { }
+
+  constructor() { }
   @Input() country: any;
 
 
-
   ngOnInit() {
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.id);
     // tslint:disable-next-line: max-line-length
     console.log('url= https://www.google.com/maps/embed/v1/place?q=' + this.country.latitude + ',' + this.country.longitude + '&amp;key=AIzaSyB0QS1J_g6nqvt7vzARlPnvJCX69mF_bhs');
+    this.country.latitude = parseFloat(this.country.latitude);
+    this.country.longitude = parseFloat(this.country.longitude);
+
   }
 
 

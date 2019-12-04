@@ -4,6 +4,6 @@
     [routerLink]="['country', country.id]"
     *ngFor="let country of countries"
   ><mat-icon aria-hidden="false" aria-label="Check details..">forward</mat-icon>
-    {{ country.name }}
+    <strong>{{ country.id }}</strong> - {{ country.name }}
   </a>
 </mat-nav-list>

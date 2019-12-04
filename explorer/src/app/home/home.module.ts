@@ -6,12 +6,16 @@ import { HomeComponent } from './home/home.component';
 import { MatCardModule, MatCard } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
     MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
     MatListModule,
     SharedModule,
     HomeRoutingModule

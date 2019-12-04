@@ -17,7 +17,7 @@ export class CountryComponent {
   ngOnInit() {
     const countryID = this.rute.snapshot.params.IDE;
     this.countryData$ = this.countryListService.getCountryById$(countryID);
-    console.log(JSON.stringify(this.countryListService.getCountryById$(countryID)));
+    // console.log(JSON.stringify(this.countryListService.getCountryById$(countryID)));
     // const countryID = this.activatedRoute.snapshot.params.countryId;
     // this.countryData$ = this.countryListService.getCountryById$(countryID);
   }

@@ -1,11 +1,14 @@
 <mat-card >
-  <mat-card-header>
-    <mat-card-title>{{country.name}}</mat-card-title>
+  <mat-card-header class="mapContainer">
+    <div mat-card-avatar class="mapView"><agm-map [latitude]="country.latitude" [longitude]="country.longitude" class="mapSize"></agm-map></div>
+    <mat-card-title class="countryLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{country.name}}</mat-card-title>
     <mat-card-subtitle><strong>Capital: </strong> {{country.capitalCity}}</mat-card-subtitle>
+    <mat-card-subtitle><strong>Region: </strong> {{country.region.value}}</mat-card-subtitle>
+    <mat-card-subtitle><strong>Population: </strong> nope</mat-card-subtitle>
+    <mat-card-subtitle><strong>Income Level: </strong> nope</mat-card-subtitle>
   </mat-card-header>
- <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{country.latitude}},{{country.longitude}}&amp;key=AIzaSyB0QS1J_g6nqvt7vzARlPnvJCX69mF_bhs"></iframe>
-  <mat-card-content>
-  <mat-divider></mat-divider>
+ <mat-card-content>
+  <mat-toolbar class="divisor">Click here to see all countries from {{ country.region.value }}</mat-toolbar>
     <p>
       {{ country.name }} belongs to {{ country.region.value }}
     </p>
