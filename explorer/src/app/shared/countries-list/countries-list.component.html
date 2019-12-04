@@ -3,7 +3,8 @@
     mat-list-item
     [routerLink]="['country', country.id]"
     *ngFor="let country of countries"
-  ><mat-icon aria-hidden="false" aria-label="Check details..">forward</mat-icon>
-    <strong>{{ country.id }}</strong> - {{ country.name }}
+    ><mat-icon aria-hidden="false" aria-label="Check details..">forward</mat-icon>
+    <img *ngIf="country.iso2Code != 48" src="https://www.countryflags.io/{{ country.iso2Code }}/flat/48.png">
+    <strong> &nbsp;&nbsp;{{ country.id }}</strong> &nbsp;- {{ country.name }}
   </a>
 </mat-nav-list>

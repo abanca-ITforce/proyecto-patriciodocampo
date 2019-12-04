@@ -25,6 +25,10 @@ agm-map {
 .actions button, .actions a {
   margin-right: 8px;
 }
+.population {
+  font-size: 13px;
+  font-style: italic;
+}
 @media (max-width: 600px) {
   .mapContainer {
     flex-flow: column wrap;

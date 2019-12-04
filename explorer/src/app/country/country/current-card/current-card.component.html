@@ -1,23 +1,23 @@
-<mat-card >
+<mat-card>
   <mat-card-header class="mapContainer">
-    <div mat-card-avatar class="mapView"><agm-map [latitude]="country.latitude" [longitude]="country.longitude" (mapClick)="pickLocation($event)" class="mapSize"><agm-marker [latitude]="country.latitude" [longitude]="country.longitude"></agm-marker></agm-map></div>
-    <mat-card-title class="countryLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{country.name}}</mat-card-title>
-    <mat-card-subtitle><strong>Capital: </strong> {{country.capitalCity}}</mat-card-subtitle>
-    <mat-card-subtitle><strong>Region: </strong> {{country.region.value}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="countryMore$ | async as countryMore"><strong>Population: </strong> aaa {{ countryMore.population }}</mat-card-subtitle>
-    <mat-card-subtitle><strong>Income Level: </strong> {{ country.incomeLevel.value }}</mat-card-subtitle>
-    <mat-card-subtitle><strong>Lending Type: </strong> {{ country.lendingType.value }}</mat-card-subtitle>
-    <mat-card-subtitle><strong>Country ISO Code: </strong> {{ country.iso2Code }}</mat-card-subtitle>
+     <div mat-card-avatar class="mapView"><agm-map [latitude]="country.data.latitude" [longitude]="country.data.longitude" (mapClick)="pickLocation($event)" class="mapSize"><agm-marker [latitude]="country.data.latitude" [longitude]="country.data.longitude"></agm-marker></agm-map></div>
+    <mat-card-title class="countryLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{country.data.name}}  <span class="population">(population: {{ country.more[0].value }})</span></mat-card-title>
+    <mat-card-subtitle><strong>Capital: </strong> {{country.data.capitalCity}}</mat-card-subtitle>
+    <mat-card-subtitle><strong>Region: </strong> {{country.data.region.value}}</mat-card-subtitle>
+    <mat-card-subtitle><strong>{{ country.more[1].indicator.value }}: </strong> {{ kk }}$</mat-card-subtitle>
+    <mat-card-subtitle><strong>Income Level: </strong> {{ country.data.incomeLevel.value }}</mat-card-subtitle>
+    <mat-card-subtitle><strong>Lending Type: </strong> {{ country.data.lendingType.value }}</mat-card-subtitle>
+    <mat-card-subtitle><strong>Country ISO Code: </strong> {{ country.data.iso2Code }}</mat-card-subtitle>
   </mat-card-header>
  <mat-card-content>
-  <mat-toolbar class="divisor">{{ countryMore$ | async | json }} -Click here to see all countries from {{ country.region.value }}</mat-toolbar>
-   <!-- <mat-toolbar *ngIf="populationGDPData$ | async as popdata; else loading" [popdata]="popdata">
+  <!-- <mat-toolbar class="divisor"> -Click here to see all countries from {{ country.data.region.value }}</mat-toolbar>
+  <mat-toolbar *ngIf="populationGDPData$ | async as popdata; else loading" [popdata]="popdata">
       {{ popdata.country.value }} belongs to {{ popdata.value }}
     </mat-toolbar>
     <ng-template #loading>charging population</ng-template>-->
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-flat-button color="primary">More countries from {{ country.region.value }}</button>
+    <button mat-flat-button color="primary">More countries from {{ country.data.region.value }}</button>
     <a mat-flat-button color="warn" (click)="goBackClick()">Go back!</a>
   </mat-card-actions>
 </mat-card>

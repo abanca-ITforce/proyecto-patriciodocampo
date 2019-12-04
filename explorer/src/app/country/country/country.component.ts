@@ -11,12 +11,14 @@ import { CountryListService } from 'src/app/countryList.service';
 export class CountryComponent {
 
   countryData$: Observable<any>;
+  countryMore$: Observable<any>;
   constructor(private rute: ActivatedRoute, private countryListService: CountryListService) { }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
     const countryID = this.rute.snapshot.params.IDE;
     this.countryData$ = this.countryListService.getCountryById$(countryID);
+    this.countryMore$ = this.countryListService.getCountryMore$(countryID);
     // console.log(JSON.stringify(this.countryListService.getCountryById$(countryID)));
     // const countryID = this.activatedRoute.snapshot.params.countryId;
     // this.countryData$ = this.countryListService.getCountryById$(countryID);
