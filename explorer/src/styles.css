@@ -4,3 +4,12 @@ body { margin: 0; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dark-primary-color    { background: #388E3C !important;}
+.default-primary-color { background: #4CAF50 !important; }
+.light-primary-color   { background: #C8E6C9 !important; }
+.text-primary-color    { color: #FFFFFF !important; }
+.accent-color          { background: #8BC34A !important; }
+.primary-text-color    { color: #212121 !important; }
+.secondary-text-color  { color: #757575 !important; }
+.divider-color         { border-color: #BDBDBD !important; }

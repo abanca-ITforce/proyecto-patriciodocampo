@@ -10,10 +10,11 @@ agm-map {
 .countryLabel {
   flex: 1 1 auto;
   width: 100%;
-  line-height: 40px;
+  line-height: 30px;
+  margin-top: 15px;
 }
 .countryIcon {
-  margin-top: 20px;
+  vertical-align: middle;
   padding-right: 8px;
 }
 .mapContainer {
@@ -21,10 +22,14 @@ agm-map {
   width: 100%;
   margin-bottom: 10px;
 }
+.actions button, .actions a {
+  margin-right: 8px;
+}
 @media (max-width: 600px) {
   .mapContainer {
     flex-flow: column wrap;
   }
+  .divisor { display: none; }
   .mapView {
     flex: 1 1 auto;
     min-width: 100%;

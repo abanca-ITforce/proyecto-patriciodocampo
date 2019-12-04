@@ -8,7 +8,6 @@
       <a mat-list-item routerLink="/" routerLinkActive="active-link"><mat-icon aria-hidden="true">keyboard_arrow_right</mat-icon> Home</a>
       <a mat-list-item routerLink="/search" routerLinkActive="active-link"><mat-icon aria-hidden="true">keyboard_arrow_right</mat-icon>Search</a>
       <a mat-list-item routerLink="regions" routerLinkActive="active-link"><mat-icon aria-hidden="true">keyboard_arrow_right</mat-icon>Regions</a>
-      <a mat-list-item routerLink="country" routerLinkActive="active-link"><mat-icon aria-hidden="true">keyboard_arrow_right</mat-icon>country</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,8 +20,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>World Bank API Explorer</span>
+      <span><mat-icon aria-hidden="true" class="logoIcon">monetization_on</mat-icon> World Bank API Explorer</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+    <div class="outlet"><router-outlet></router-outlet></div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -15,3 +15,9 @@
   top: 0;
   z-index: 1;
 }
+.logoIcon {
+  vertical-align: middle;
+}
+.outlet {
+  padding: 10px;
+}

@@ -6,8 +6,10 @@ import { CountryComponent } from './country/country.component';
 import { CurrentCardComponent } from './country/current-card/current-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -15,7 +17,9 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     CommonModule,
     MatCardModule,
+    MatButtonModule,
     MatToolbarModule,
+    MatSnackBarModule,
     MatIconModule,
     MatDividerModule,
     AgmCoreModule.forRoot({
