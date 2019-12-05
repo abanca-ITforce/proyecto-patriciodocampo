@@ -1,0 +1,10 @@
+<app-card-display
+*ngIf="{ data : regionData$ | async, countries : regionCountries$ |async } as region; else empty"
+[region]="region"
+></app-card-display>
+<ng-template #empty>
+  <mat-toolbar>
+    <mat-icon aria-hidden="true" class="countryIcon">autorenew</mat-icon> Loading...
+  </mat-toolbar>
+</ng-template>
+

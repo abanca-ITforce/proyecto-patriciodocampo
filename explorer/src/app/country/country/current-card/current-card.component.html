@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header class="mapContainer">
      <div mat-card-avatar class="mapView"><agm-map [latitude]="country.data.latitude" [longitude]="country.data.longitude" (mapClick)="pickLocation($event)" class="mapSize"><agm-marker [latitude]="country.data.latitude" [longitude]="country.data.longitude"></agm-marker></agm-map></div>
-    <mat-card-title class="countryLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{country.data.name}}  <span class="population">(population: {{ country.more[0].value }})</span></mat-card-title>
+    <mat-card-title class="countryLabel"><!--<mat-icon aria-hidden="true" class="countryIcon">public</mat-icon>--><img src="https://www.countryflags.io/{{ country.data.iso2Code }}/flat/48.png" class="countryIcon"> {{country.data.name}}  <span class="population">(population: {{ country.more[0].value }})</span></mat-card-title>
     <mat-card-subtitle><strong>Capital: </strong> {{country.data.capitalCity}}</mat-card-subtitle>
     <mat-card-subtitle><strong>Region: </strong> {{country.data.region.value}}</mat-card-subtitle>
     <mat-card-subtitle><strong>{{ country.more[1].indicator.value }}: </strong> {{ kk }}$</mat-card-subtitle>

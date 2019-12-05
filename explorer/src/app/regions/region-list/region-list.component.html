@@ -1,0 +1,9 @@
+<mat-nav-list>
+  <a
+    mat-list-item
+    *ngFor="let region of regions"
+    [routerLink]="[region.code]"
+    ><mat-icon aria-hidden="false" aria-label="Check details..">forward</mat-icon>
+    <strong> &nbsp;&nbsp;{{ region.code }}</strong> &nbsp;- {{ region.name }}
+  </a>
+</mat-nav-list>

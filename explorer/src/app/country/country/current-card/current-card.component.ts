@@ -20,10 +20,13 @@ export class CurrentCardComponent implements OnInit {
 
   // tslint:disable-next-line: variable-name
   constructor(private locationPoint: Location, private countryListService: CountryListService) { }
- kk = 'Not aviable...';
+ kk = 'Loading...';
   ngOnInit() {
     setTimeout(() => {
       this.kk = this.country.more[1].value;
+      if(this.country.more[1].value === '' || this.country.more[1].value == null) {
+        this.kk = 'Not aviable this year...';
+      }
       this.country.data.latitude = parseFloat(this.country.data.latitude);
       this.country.data.longitude = parseFloat(this.country.data.longitude);
     }, 1000);

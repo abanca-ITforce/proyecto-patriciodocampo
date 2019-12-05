@@ -11,8 +11,16 @@ export class CountryListService {
   constructor(private httpClient: HttpClient) { }
 
   getRegions$() {
-    const url = `https://api.worldbank.org/v2/country/?per_page=1000&format=json`;
-    return this.httpClient.get<any[]>(url).pipe(map(result => result[1].filter(x => !x.capitalCity)));
+    const url = `https://api.worldbank.org/v2/region/?format=json`;
+    return this.httpClient.get<any[]>(url).pipe(map(result => result[1]));
+  }
+  getDataFromRegion$(code) {
+    const url = `https://api.worldbank.org/v2/region/?format=json`;
+    return this.httpClient.get<any[]>(url).pipe(map(result => result[1].filter(x => x.code === code)));
+  }
+  getCountriesFromRegion$(code) {
+    const url = `https://api.worldbank.org/v2/country?region=${ code }&per_page=1000&format=json`;
+    return this.httpClient.get<any[]>(url).pipe(map(result => result[1]));
   }
   getCountries$() {
     const url = `https://api.worldbank.org/v2/country/?per_page=1000&format=json`;

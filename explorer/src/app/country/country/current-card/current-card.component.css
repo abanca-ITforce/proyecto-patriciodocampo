@@ -10,8 +10,9 @@ agm-map {
 .countryLabel {
   flex: 1 1 auto;
   width: 100%;
-  line-height: 30px;
+  line-height: 15px;
   margin-top: 15px;
+  vertical-align: middle;
 }
 .countryIcon {
   vertical-align: middle;
