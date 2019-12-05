@@ -1,3 +1,23 @@
-<p>card-display works! - {{ region.data[0].name }} </p>
-<hr>
-
+<mat-card>
+  <mat-card-header class="mapContainer">
+    <mat-card-title class="regionLabel"><mat-icon aria-hidden="true" class="countryIcon">public</mat-icon> {{ region.data[0].name }}</mat-card-title>
+    <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    <mat-card-subtitle><strong>Total Countries: </strong> {{ region.countries.length }}</mat-card-subtitle>
+    <mat-card-subtitle><strong>CODE: </strong> {{ region.data[0].code }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions class="actions" style="padding-left: 15px;">
+     <a mat-flat-button color="warn" (click)="goBackClick()">Go back!</a>
+    </mat-card-actions>
+</mat-card><br>
+<p class="msg_below" *ngIf="!region.countries[1]">{{ msg.nocountries }}</p>
+<p class="msg_below" *ngIf="region.countries[1]">{{ msg.countries }}</p>
+<mat-nav-list>
+  <a
+    mat-list-item
+    [routerLink]="['/country', country.id]"
+    *ngFor="let country of region.countries"
+    ><mat-icon aria-hidden="false" aria-label="Check details..">forward</mat-icon>
+    <img *ngIf="country.iso2Code != 48" src="https://www.countryflags.io/{{ country.iso2Code }}/flat/48.png">
+    <strong> &nbsp;&nbsp;{{ country.id }}</strong> &nbsp;- {{ country.name }}
+  </a>
+</mat-nav-list>

@@ -18,6 +18,7 @@ export class RegionCardComponent implements OnInit {
     console.log(regCODE);
     this.regionData$ = this.countryListService.getDataFromRegion$(regCODE);
     this.regionCountries$ = this.countryListService.getCountriesFromRegion$(regCODE);
+    // const regs: any = this.countryListService.getCountriesFromRegion$(regCODE).subscribe();
   }
 
 }
