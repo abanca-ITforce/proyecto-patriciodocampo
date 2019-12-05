@@ -17,7 +17,7 @@
     <ng-template #loading>charging population</ng-template>-->
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button mat-flat-button color="primary">More countries from {{ country.data.region.value }}</button>
+    <a mat-flat-button color="primary" [routerLink]="['/regions', country.data.region.id]">More countries from {{ country.data.region.value }}</a>
     <a mat-flat-button color="warn" (click)="goBackClick()">Go back!</a>
   </mat-card-actions>
 </mat-card>
