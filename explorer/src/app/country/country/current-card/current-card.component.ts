@@ -17,19 +17,16 @@ export class CurrentCardComponent implements OnInit {
 
   @Input() id: string;
   @Input() country: any;
+  @Input() countryMore: any;
 
   // tslint:disable-next-line: variable-name
   constructor(private locationPoint: Location, private countryListService: CountryListService) { }
  kk = 'Loading...';
   ngOnInit() {
-    setTimeout(() => {
-      this.kk = this.country.more[1].value;
-      if(this.country.more[1].value === '' || this.country.more[1].value == null) {
-        this.kk = 'Not aviable this year...';
-      }
-      this.country.data.latitude = parseFloat(this.country.data.latitude);
-      this.country.data.longitude = parseFloat(this.country.data.longitude);
-    }, 1000);
+     setTimeout(() => {
+        this.country.latitude = parseFloat(this.country.latitude);
+        this.country.longitude = parseFloat(this.country.longitude);
+      }, 1000);
     // this.countryMore$ = this.countryListService.getCountryMore$(this.country.id);
     // tslint:disable-next-line: max-line-length
     // tslint:disable-next-line: max-line-length
@@ -44,7 +41,7 @@ export class CurrentCardComponent implements OnInit {
     // if (this.countryMore[1].value === '') { this.countryMore[1].value = 'Not Aviable'; }
 
     // const getMore$ = this.countryListService.getCountryMore$(this.id);
-    console.log(this.country.id);
+    // console.log(this.country.id);
     // this.countryMore$ = this.countryListService.getCountryMore$(this.country.id);
     // console.log('JSON: ' + JSON.stringify(this.countryMore$));
     // console.log('holaaa' + (this.countryMore));
@@ -54,8 +51,8 @@ export class CurrentCardComponent implements OnInit {
     this.locationPoint.back();
   }
   pickLocation(event) {
-    this.country.data.latitude = event.coords.lat;
-    this.country.data.longitude = event.coords.lng;
-    this.country.more[1].value = 1;
+    this.country.latitude = event.coords.lat;
+    this.country.longitude = event.coords.lng;
+    // this.country.more[1].value = 1;
   }
 }

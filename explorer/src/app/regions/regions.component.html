@@ -1,4 +1,6 @@
 <app-region-list *ngIf="regionList$ | async as regions; else empty" [regions]="regions"></app-region-list>
 <ng-template #empty>
-  Loading...
-</ng-template>
+    <mat-toolbar>
+      <mat-icon aria-hidden="true" class="countryIcon">autorenew</mat-icon> Loading...
+    </mat-toolbar>
+  </ng-template>

@@ -1,9 +1,7 @@
+
 <app-current-card
-*ngIf="{ data : countryData$ | async, more : countryMore$ |async } as country; else empty"
-[country]="country"
+
+[country]="countryData$ | async"
+[countryMore]="countryMore$ | async"
 ></app-current-card>
-<ng-template #empty>
-  <mat-toolbar>
-    <mat-icon aria-hidden="true" class="countryIcon">autorenew</mat-icon> Loading...
-  </mat-toolbar>
-</ng-template>
+
