@@ -12,7 +12,7 @@ export class CardDisplayComponent implements OnInit {
     name : 'Loading..'
   };
   ngOnInit() {
-
+    console.log('aa' + this.region.countries[0]);
   }
 
 }
