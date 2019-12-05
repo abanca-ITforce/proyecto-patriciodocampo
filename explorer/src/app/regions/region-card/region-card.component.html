@@ -1,6 +1,6 @@
 <app-card-display
-*ngIf="{ data : regionData$ | async, countries : regionCountries$ |async } as region; else empty"
-[region]="region"
+[region]="regionData$ |async"
+[regionCountries]="regionCountries$ |async"
 ></app-card-display>
 <ng-template #empty>
   <mat-toolbar>

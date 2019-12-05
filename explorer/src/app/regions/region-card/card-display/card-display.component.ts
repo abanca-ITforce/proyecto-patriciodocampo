@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
 })
 export class CardDisplayComponent implements OnInit {
   @Input() region: any;
+  @Input() regionCountries: any;
   constructor(private locationPoint: Location) { }
   totalCountries = 1;
   msg = {
