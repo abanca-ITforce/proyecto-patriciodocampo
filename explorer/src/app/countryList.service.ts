@@ -37,4 +37,23 @@ export class CountryListService {
     return this.httpClient.get<any>(filterURL).pipe(map(result => [result[1][0], result[1][1]]));
   }
 
+  // tslint:disable-next-line: no-shadowed-variable
+  getCountriesByFilter(filter: any) {
+    // https://api.worldbank.org/v2/country?
+    // lendingType = LNX &
+    // incomeLevel = HIC &
+    // region = ECS & per_page=1000 & format=json
+    let url = 'https://api.worldbank.org/v2/country/?per_page=1000&format=json';
+    if (filter.incomeLevel) {
+      url += '&incomeLevel=' + filter.incomeLevel;
+    }
+    console.log({ url });
+    return this.httpClient.get<any[]>(url).pipe(map(result => result[1]));
+  }
+
+  getIncomeLevels$() {
+    const url = 'https://api.worldbank.org/v2/incomeLevel';
+    return this.httpClient.get<any[]>(url).pipe(map(result => result[1]));
+  }
+
 }

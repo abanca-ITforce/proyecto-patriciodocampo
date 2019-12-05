@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CountryListService } from 'src/app/countryList.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  countries$: Observable<any[]>;
+  incomeLevels$: Observable<any[]>;
 
-  constructor() { }
+  constructor(private countryListService: CountryListService) { }
 
   ngOnInit() {
+    this.incomeLevels$ = this.countryListService.getIncomeLevels$();
   }
 
 }

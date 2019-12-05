@@ -1,1 +1,6 @@
-<p>search works!</p>
+<app-search-form
+  [incomeLevels]="incomeLevels$ | async"
+  (filter)="onFilter($event)"
+></app-search-form>
+
+<app-countries-list [countries]="countries$ | async"></app-countries-list>
